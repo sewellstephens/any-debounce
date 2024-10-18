@@ -1,11 +1,9 @@
 {
   "name": "any-debounce",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple debounce package made just for react.",
   "main": "index.js",
-  "dependencies": {
-    "react": "^18.3.1"
-  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

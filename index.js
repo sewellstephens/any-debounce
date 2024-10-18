@@ -1,4 +1,5 @@
 
+//debounce function for debouncing a function
 const debounce = (callback, wait) => {
     let timeoutId = null;
     return (...args) => {
@@ -9,6 +10,23 @@ const debounce = (callback, wait) => {
     };
 }
 
-export const useDebounce = (callback, wait) => {
+const debouncer = (callback, wait) => {
     return debounce(callback, wait);
 }
+
+//debounce function for debouncing a value
+const debounceValue = (value, wait) => {
+  let timeoutId = null;
+    return () => {
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => {
+        return value;
+      }, wait);
+    };
+};
+
+const useDebounce = (value, wait) => {
+    return debounceValue(value, wait);
+}
+
+export { debouncer, useDebounce };
